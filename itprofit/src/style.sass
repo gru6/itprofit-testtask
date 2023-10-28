@@ -1,0 +1,139 @@
+body
+  background-color: #3878ac
+
+.shadow-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 130vh
+  background-color: rgba(20, 20, 20, 0.7)
+  z-index: 100
+
+.buy-form
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
+  position: absolute
+  top: 50%
+  margin-top: -230px
+  left: 50%
+  margin-left: -375px
+  z-index: 102
+  display: table-cell
+  vertical-align: middle
+
+  form
+    position: absolute
+    padding: 20px
+    width: 700px
+    background: #fff
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+    font-size: 18px
+    line-height: 100%
+
+    .row
+      display: flex
+      flex-wrap: wrap
+      ow-gap: 15px
+      column-gap: 15px
+
+      .col
+        flex: 1 1 250px
+
+        .title
+          font-size: 20px
+          color: #333
+          padding-bottom: 5px
+          text-transform: uppercase
+
+        .inputBox
+          margin: 15px 0
+
+          span
+            margin-bottom: 10px
+            display: block
+
+          input, textarea
+            width: 100%
+            border: 1px solid #ccc
+            padding: 10px 15px
+            font-size: 15px
+            text-transform: none
+
+/*             &:invalid
+              border-color: red
+
+            &:valid
+              border-color: green
+
+            &:invalid:not(:placeholder-shown)
+              border-color: red
+
+            &:valid:not(:placeholder-shown)
+              border-color: green */
+
+            &:focus
+              border: 1px solid #000
+
+.inputBox
+  margin-top: 5px
+
+.textarea
+  &:valid
+    border-color: green
+  &invalid
+    border-color: red
+
+.submit-btn
+  width: 100%
+  padding: 12px
+  font-size: 17px
+  background: #27ae60
+  color: #fff
+  margin-top: 5px
+  cursor: pointer
+
+  &:hover
+    background: #2ecc71
+
+@media (max-width: 1100px)
+  .buy-form form
+    width: 500px
+    font-size: 14px
+    padding: 10px
+
+    .row
+      display: flex
+      flex-direction: column
+
+      .col .inputBox
+        margin: 5px 0
+
+      .col .inputBox span
+        margin-bottom: 5px
+
+    .input
+      padding: 5px 15px
+
+    .col .title
+      font-size: 18px
+
+    .col
+      flex: 1 1 220px
+
+  .buy-form
+    margin-top: -272px
+    margin-left: -250px
+
+@media (max-width: 800px)
+  .buy-form
+    margin-top: -380px
+
+@media (max-width: 600px)
+  .buy-form form
+    width: 300px
+
+  .buy-form
+    margin-top: -380px
+    margin-left: -150px
