@@ -13,23 +13,26 @@
       <div class="row">
         <div class="col">
           <h3 class="title">Personal details</h3>
+          <span id="generalError" class="error"></span>
           <div class="inputBox">
             <span>username:</span>
-            <input  id="username" name="name" type="text" placeholder="John" 
-              pattern="[a-zA-Za-яА-я]{3,}(\\s[a-zA-Za-яА-я]{3,})+" title="Длинее 3 букв" value="John"
-              >
+            <input id="username" name="name" type="text" placeholder="John" title="Длинее 3 букв" value="John">
+            <span id="nameError" class="error"></span>
           </div>
           <div class="inputBox">
             <span>email:</span>
-            <input  id="email" name="email" type="email" placeholder="example@example.com" value="gru6@tut.by" >
+            <input id="email" name="email" type="email" placeholder="example@example.com" value="gru6@tut.by">
+            <span id="emailError" class="error"></span>
           </div>
           <div class="inputBox">
             <span>phone:</span>
-            <input id="phone" name="phone" type="tel"  id="phone" placeholder="+375(99) 999-99-99">
+            <input id="phone" name="phone" type="tel" id="phone" placeholder="+375(99) 999-99-99">
+            <span id="phoneError" class="error"></span>
           </div>
           <div class="inputBox">
             <span>message:</span>
-            <textarea name="textarea" id="message" minlength="1" placeholder="введи текст" ></textarea>
+            <textarea name="textarea" id="message" minlength="1" placeholder="введи текст"></textarea>
+            <span id="textError" class="error"></span>
           </div>
         </div>
       </div>

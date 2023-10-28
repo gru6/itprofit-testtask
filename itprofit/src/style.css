@@ -1,0 +1,153 @@
+body {
+  background-color: #3878ac;
+}
+
+.shadow-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 130vh;
+  background-color: rgba(20, 20, 20, 0.7);
+  z-index: 100;
+}
+
+.buy-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 50%;
+  margin-top: -230px;
+  left: 50%;
+  margin-left: -375px;
+  z-index: 102;
+  display: table-cell;
+  vertical-align: middle;
+}
+.buy-form form {
+  position: absolute;
+  padding: 20px;
+  width: 700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 100%;
+}
+.buy-form form .row {
+  display: flex;
+  flex-wrap: wrap;
+  ow-gap: 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.buy-form form .row .col {
+  flex: 1 1 250px;
+}
+.buy-form form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+.buy-form form .row .col .inputBox {
+  margin: 15px 0;
+}
+.buy-form form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+.buy-form form .row .col .inputBox input, .buy-form form .row .col .inputBox textarea {
+  width: 100%;
+  border: 1px solid;
+  border-color: #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+.buy-form form .row .col .inputBox .invalid {
+  border-color: red;
+}
+.buy-form form .row .col .inputBox .valid {
+  border-color: green;
+}
+.buy-form form .row .col .inputBox:focus {
+  border: 1px solid #000;
+}
+
+.inputBox {
+  margin-top: 5px;
+}
+
+.textarea:valid {
+  border-color: green;
+}
+.textareainvalid {
+  border-color: red;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: #27ae60;
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #2ecc71;
+}
+
+@media (max-width: 1100px) {
+  .buy-form form {
+    width: 500px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .buy-form form .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .buy-form form .row .col .inputBox {
+    margin: 5px 0;
+  }
+  .buy-form form .row .col .inputBox span {
+    margin-bottom: 5px;
+  }
+  .buy-form form .input {
+    padding: 5px 15px;
+  }
+  .buy-form form .col .title {
+    font-size: 18px;
+  }
+  .buy-form form .col {
+    flex: 1 1 220px;
+  }
+  .buy-form {
+    margin-top: -272px;
+    margin-left: -250px;
+  }
+}
+@media (max-width: 800px) {
+  .buy-form {
+    margin-top: -380px;
+  }
+}
+@media (max-width: 600px) {
+  .buy-form form {
+    width: 300px;
+  }
+  .buy-form {
+    margin-top: -380px;
+    margin-left: -150px;
+  }
+}
+.error {
+  height: 10px;
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

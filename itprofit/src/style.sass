@@ -56,25 +56,20 @@ body
 
           input, textarea
             width: 100%
-            border: 1px solid #ccc
+            border: 1px solid
+            border-color: #ccc
             padding: 10px 15px
             font-size: 15px
             text-transform: none
 
-/*             &:invalid
-              border-color: red
+          .invalid
+            border-color: red
 
-            &:valid
-              border-color: green
+          .valid
+            border-color: green
 
-            &:invalid:not(:placeholder-shown)
-              border-color: red
-
-            &:valid:not(:placeholder-shown)
-              border-color: green */
-
-            &:focus
-              border: 1px solid #000
+          &:focus
+            border: 1px solid #000
 
 .inputBox
   margin-top: 5px
@@ -137,3 +132,11 @@ body
   .buy-form
     margin-top: -380px
     margin-left: -150px
+
+.error
+  height: 10px
+  color: red
+  font-size: 12px
+  display: block
+  margin-top: 5px
+  text-align: center
