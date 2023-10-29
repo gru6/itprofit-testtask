@@ -7,13 +7,13 @@
     "build": "npx webpack --mode production",
     "start": "npx webpack-dev-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server/index.js" 
-
+    "server": "node server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "sass": "^1.69.5",
