@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Form</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
   <div class="buy-form">
+    <button id="myBtn" class="btn">Open Modal</button>
     <form action="" id="myForm" novalidate>
       <div class="row">
         <div class="col">
@@ -16,12 +24,12 @@
           <span id="generalError" class="error"></span>
           <div class="inputBox">
             <span>username:</span>
-            <input id="username" name="name" type="text" placeholder="John" title="Длинее 3 букв" value="John">
+            <input id="username" name="name" type="text" placeholder="John" title="Длинее 3 букв">
             <span id="nameError" class="error"></span>
           </div>
           <div class="inputBox">
             <span>email:</span>
-            <input id="email" name="email" type="email" placeholder="example@example.com" value="gru6@tut.by">
+            <input id="email" name="email" type="email" placeholder="example@example.com">
             <span id="emailError" class="error"></span>
           </div>
           <div class="inputBox">
@@ -31,13 +39,15 @@
           </div>
           <div class="inputBox">
             <span>message:</span>
-            <textarea name="textarea" id="message" minlength="1" placeholder="введи текст"></textarea>
+            <textarea name="textarea" id="message" minlength="1" placeholder="введите текст"></textarea>
             <span id="textError" class="error"></span>
           </div>
         </div>
       </div>
-      <input type="submit" value="buy" class="submit-btn">
+      <input type="submit" value="Sent" class="btn">
+
     </form>
+
   </div>
   <script src="index.js" type="module"></script>
 </body>

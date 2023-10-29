@@ -1,6 +1,8 @@
 import Inputmask from "inputmask";
 import "./style.sass";
-
+import { initializeModal, openModal } from "./component/modal";
+import { createNewUser } from "./component/api";
+import { validateForm } from "./component/formValidation";
 
 Inputmask({ mask: "+375(99) 999-99-99" }).mask(
   document.getElementById("phone")
@@ -9,7 +11,7 @@ Inputmask({ mask: "+375(99) 999-99-99" }).mask(
 const form = document.getElementById("myForm");
 
 form.addEventListener("submit", async function (event) {
-  event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+  event.preventDefault();
 
   // Получаем значения полей формы
   const username = document.getElementById("username");
@@ -22,87 +24,30 @@ form.addEventListener("submit", async function (event) {
   const emailError = document.getElementById("emailError");
   const phoneError = document.getElementById("phoneError");
 
-  // Проверка, что поля не пустые
+  //валидируем форму
   if (
-    username.value.trim() === "" ||
-    email.value.trim() === "" ||
-    phone.inputmask.unmaskedvalue().length < 1 ||
-    message.value.trim() === ""
+    validateForm(
+      username,
+      email,
+      phone,
+      message,
+      generalError,
+      nameError,
+      emailError,
+      phoneError
+    )
   ) {
-    generalError.innerHTML = "Заполните все поля.";
-    return;
-  } else {
-    generalError.innerHTML = "";
-  }
+    openModal("Форма успешно отправлена!")
 
-  // Проверка корректности username
-  const usernameRegex = /^.{3,}$/;
-  if (!usernameRegex.test(username.value)) {
-    notValid(username, nameError, "Имя длинее 3 букв.");
-    return;
-  } else {
-    valid(username, nameError);
-  }
-
-  // Проверка корректности email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email.value)) {
-    notValid(email, emailError, "Введите корректный email.");
-    return;
-  } else {
-    valid(email, emailError);
-  }
-
-  // Проверка корректности phone
-  if (phone.inputmask.unmaskedvalue().length < 9) {
-    notValid(phone, phoneError, "Введите корректный номер.");
-    return;
-  } else {
-    valid(phone, phoneError);
-  }
-
-  alert("Форма успешно отправлена!");
-
-  const userInfo = {
-    username: username.value,
-    email: email.value,
-    phone: phone.value,
-    message: message.value,
-  };
-
-  async function createNewUser(userInfo) {
-    try {
-      console.log('userInfo :>> ', userInfo);
-      const response = await fetch("http://localhost:9090/api/registration", {
-        method: "POST",
-        body: JSON.stringify(userInfo),
-      });
-      if (!response.ok) {
-       console.log('response :>> ', response.statusText);
-        throw new Error(
-          `Create NewUser request failed. Error: ${response.status}`
-        );
-      }
-      const data = await response.json();
-      console.log('data :>> ', data); //ТУТ НАДО ВЫВЕСТИ You are registered НА САЙТ И ОЧИСТИТЬ ФОРМУ
-      form.reset();
-      return data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  createNewUser(userInfo);
+    const userInfoForApi = {
+      username: username.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value,
+    };
+    createNewUser(userInfoForApi, form, openModal);
+  } 
 });
 
-function notValid(input, el, errorMessage) {
-  input.classList.add("invalid");
-  el.innerHTML = errorMessage;
-}
-
-function valid(input, el) {
-  input.classList.remove("invalid");
-  input.classList.add("valid");
-  el.innerHTML = "";
-}
-
+const modalBtn = document.getElementById("myBtn");
+initializeModal("Просто текст", modalBtn);
