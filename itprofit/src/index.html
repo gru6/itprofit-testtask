@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <div class="buy-form">
+    <button id="myBtn" class="btn">Open Modal</button>
+    <form action="" id="myForm" novalidate>
+      <div class="row">
+        <div class="col">
+          <h3 class="title">Personal details</h3>
+          <span id="generalError" class="error"></span>
+          <div class="inputBox">
+            <span>username:</span>
+            <input id="username" name="name" type="text" placeholder="John" title="Длинее 3 букв">
+            <span id="nameError" class="error"></span>
+          </div>
+          <div class="inputBox">
+            <span>email:</span>
+            <input id="email" name="email" type="email" placeholder="example@example.com">
+            <span id="emailError" class="error"></span>
+          </div>
+          <div class="inputBox">
+            <span>phone:</span>
+            <input id="phone" name="phone" type="tel" id="phone" placeholder="+375(99) 999-99-99">
+            <span id="phoneError" class="error"></span>
+          </div>
+          <div class="inputBox">
+            <span>message:</span>
+            <textarea name="textarea" id="message" minlength="1" placeholder="введите текст"></textarea>
+            <span id="textError" class="error"></span>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Sent" class="btn">
+
+    </form>
+
+  </div>
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
